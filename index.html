@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentación Personal</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
 </head>
 <body>
     <div class="container">
+        <!-- Contador de visitas -->
+        <div class="visit-counter">
+            <span>👁️</span>
+            <span id="visit-count">0</span>
+        </div>
+
         <div class="photo" onclick="launchFireworks(event)">
             <div class="floating-message">Click en la foto</div>
             <img src="rf_jmz.jpeg" alt="Foto" width="200" height="200">
@@ -41,6 +50,41 @@
     </div>
 
     <script>
+        // Configura Firebase con tus credenciales
+        const firebaseConfig = {
+            apiKey: "TU_API_KEY",
+            authDomain: "TU_AUTH_DOMAIN",
+            projectId: "TU_PROJECT_ID",
+            storageBucket: "TU_STORAGE_BUCKET",
+            messagingSenderId: "TU_MESSAGING_SENDER_ID",
+            appId: "TU_APP_ID"
+        };
+
+        // Inicializa Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Función para actualizar el contador de visitas
+        async function updateVisitCounter() {
+            const counterRef = db.collection('visits').doc('pageVisits');
+            const doc = await counterRef.get();
+
+            if (doc.exists) {
+                // Si el documento existe, incrementa el contador
+                const currentCount = doc.data().count || 0;
+                await counterRef.update({ count: currentCount + 1 });
+                document.getElementById('visit-count').textContent = currentCount + 1;
+            } else {
+                // Si el documento no existe, créalo con un contador inicial de 1
+                await counterRef.set({ count: 1 });
+                document.getElementById('visit-count').textContent = 1;
+            }
+        }
+
+        // Llama a la función para actualizar el contador
+        updateVisitCounter();
+
+        // Función para los fuegos artificiales
         function launchFireworks(event) {
             const icons = [
                 'html.png', 'css.png', 'js.png', 'python.png', 'php.png','vs.png', 'c.png', 'eclipse.png', 'net.png'
@@ -84,3 +128,5 @@
     </script>
 </body>
 </html>
+
+

@@ -1,8 +1,8 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000000; /* Fondo negro */
+    background-color: #0a0a0a; /* Fondo negro oscuro */
     color: #ffffff; /* Texto blanco */
     display: flex;
     justify-content: center;
@@ -14,29 +14,46 @@ body {
 
 .container {
     text-align: center;
-    background: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05); /* Fondo semi-transparente */
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     max-width: 600px;
     width: 90%;
     position: relative;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+}
+
+.visit-counter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 16px;
+    border-radius: 20px;
 }
 
 .photo {
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 20px;
-    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .photo:hover {
     transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.4);
 }
 
 .photo img {
@@ -83,7 +100,7 @@ h1 {
 p {
     font-size: 16px;
     line-height: 1.6;
-    color: #ffffff; /* Texto blanco */
+    color: #e0e0e0; /* Texto gris claro */
     font-weight: 300;
 }
 
