@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Presentación Personal</title>
     <link rel="stylesheet" href="styles.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="photo" onclick="launchFireworks(event)">
+            <div class="floating-message">Click en la foto</div> <!-- Mensaje flotante -->
             <img src="rf_jmz.jpeg" alt="Foto" width="200" height="200">
         </div>
         <h1>RAFAEL JIMENEZ MARTINEZ</h1>
-    <div class="separator"></div>
-    <p>
-        Soy estudiante de TSU en la carrera de <b>Tecnologías de la Información: Área Desarrollo de Software Multiplataforma</b> 
-        en la Universidad Tecnológica del Valle de Toluca. Actualmente estoy en el <b>5to semestre</b>.
-        <br><br>
-        Tengo <b>20 años</b>. Me gusta el <b>atletismo</b>, la <b>música</b>, programar, jugar videojuegos. 
-        Soy una persona <b>simpática</b>, me gusta la <b>comunicación</b>, escuchar y disfrutar de la vida.
-    </p>
+        <div class="separator"></div>
+        <p>
+            Soy estudiante de TSU en la carrera de <b>Tecnologías de la Información: Área Desarrollo de Software Multiplataforma</b> 
+            en la Universidad Tecnológica del Valle de Toluca. Actualmente estoy en el <b>5to Cuatrimestre</b>.
+            <br><br>
+            Tengo <b>20 años</b>. Me gusta el <b>atletismo</b>, la <b>música</b>, programar, jugar videojuegos. 
+            Soy una persona <b>simpática</b>, me gusta la <b>comunicación</b>, escuchar y disfrutar de la vida.
+        </p>
 
         <!-- Redes Sociales -->
         <div class="social-links">
@@ -38,14 +39,13 @@
             </a>
         </div>
     </div>
-    </div>
 
     <script>
         function launchFireworks(event) {
             const icons = [
                 'html.png', 'css.png', 'js.png', 'python.png', 'php.png','vs.png', 'c.png', 'eclipse.png', 'net.png'
             ];
-    
+
             for (let i = 0; i < 9; i++) {
                 let firework = document.createElement('div');
                 firework.classList.add('firework');
@@ -53,42 +53,34 @@
                 firework.style.position = 'absolute';
                 firework.style.left = `${event.clientX - 25}px`;
                 firework.style.top = `${event.clientY - 25}px`;
-    
-                // Asignar una dispersión aleatoria para cada imagen
-                const randomX = (Math.random() - 0.5) * 300; // Desplazamiento aleatorio en X
-                const randomY = (Math.random() - 0.5) * 300; // Desplazamiento aleatorio en Y
-                const randomRotation = (Math.random() - 0.5) * 360; // Rotación aleatoria
+
+                const randomX = (Math.random() - 0.5) * 300;
+                const randomY = (Math.random() - 0.5) * 300;
+                const randomRotation = (Math.random() - 0.5) * 360;
                 firework.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotation}deg)`;
-    
-                // Establecer un tamaño inicial más pequeño y aumentar
+
                 firework.style.transformOrigin = 'center';
                 firework.style.transform += ' scale(0.5)';
-                
-                // Efecto de transición
+
                 firework.style.transition = 'transform 1s ease-out, opacity 0.8s ease-in-out, transform 1s ease-in-out';
                 firework.style.opacity = '1';
-    
-                // Retraso en la animación para separarlas
+
                 firework.style.transitionDelay = `${i * 0.1}s`;
-    
-                // Añadir efectos de desvanecimiento y escalado
+
                 firework.style.transition += ', transform 1s ease-in-out';
-    
+
                 document.body.appendChild(firework);
-    
-                // Animación de desaparecer después de 1.5 segundos
+
                 setTimeout(() => {
                     firework.style.opacity = '0';
                     firework.style.transform = `translate(${randomX}px, ${randomY}px) scale(0.2)`;
-                }, 1000); // Después de 1 segundo, empieza la animación de desaparición
-    
+                }, 1000);
+
                 setTimeout(() => {
                     firework.remove();
-                }, 1500); // Se elimina después de que la animación termina
+                }, 1500);
             }
         }
     </script>
-    
-    
 </body>
 </html>
