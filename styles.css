@@ -260,3 +260,9 @@ footer {
         gap: 10px;
     }
 }
+.subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--secondary-text-color);
+    margin-bottom: 20px;
+}
