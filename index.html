@@ -3,130 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentación Personal</title>
+    <title>Rafael Jiménez Martínez</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Firebase SDK (versión modular) -->
-    <script type="module">
-        // Importa las funciones necesarias de Firebase
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-        import { getFirestore, doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
-
-        // Configuración de Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyC-cjk-6ifycrv4U02zLjw2lVwzcEKIwAQ",
-            authDomain: "rafa-jmz.firebaseapp.com",
-            projectId: "rafa-jmz",
-            storageBucket: "rafa-jmz.firebasestorage.app",
-            messagingSenderId: "941988447162",
-            appId: "1:941988447162:web:1866353d0b5e016b5b1383",
-            measurementId: "G-33SWPKFKVH"
-        };
-
-        // Inicializa Firebase
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        // Función para actualizar el contador de visitas
-        async function updateVisitCounter() {
-            const counterRef = doc(db, 'visits', 'pageVisits');
-            const docSnap = await getDoc(counterRef);
-
-            if (docSnap.exists()) {
-                // Si el documento existe, incrementa el contador
-                const currentCount = docSnap.data().count || 0;
-                await updateDoc(counterRef, { count: currentCount + 1 });
-                document.getElementById('visit-count').textContent = currentCount + 1;
-            } else {
-                // Si el documento no existe, créalo con un contador inicial de 1
-                await setDoc(counterRef, { count: 1 });
-                document.getElementById('visit-count').textContent = 1;
-            }
-        }
-
-        // Llama a la función para actualizar el contador
-        updateVisitCounter();
-
-        // Función para los fuegos artificiales
-        function launchFireworks(event) {
-            const icons = [
-                'html.png', 'css.png', 'js.png', 'python.png', 'php.png','vs.png', 'c.png', 'eclipse.png', 'net.png'
-            ];
-
-            for (let i = 0; i < 9; i++) {
-                let firework = document.createElement('div');
-                firework.classList.add('firework');
-                firework.style.backgroundImage = `url(${icons[i]})`;
-                firework.style.position = 'absolute';
-                firework.style.left = `${event.clientX - 25}px`;
-                firework.style.top = `${event.clientY - 25}px`;
-
-                const randomX = (Math.random() - 0.5) * 300;
-                const randomY = (Math.random() - 0.5) * 300;
-                const randomRotation = (Math.random() - 0.5) * 360;
-                firework.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotation}deg)`;
-
-                firework.style.transformOrigin = 'center';
-                firework.style.transform += ' scale(0.5)';
-
-                firework.style.transition = 'transform 1s ease-out, opacity 0.8s ease-in-out, transform 1s ease-in-out';
-                firework.style.opacity = '1';
-
-                firework.style.transitionDelay = `${i * 0.1}s`;
-
-                firework.style.transition += ', transform 1s ease-in-out';
-
-                document.body.appendChild(firework);
-
-                setTimeout(() => {
-                    firework.style.opacity = '0';
-                    firework.style.transform = `translate(${randomX}px, ${randomY}px) scale(0.2)`;
-                }, 1000);
-
-                setTimeout(() => {
-                    firework.remove();
-                }, 1500);
-            }
-        }
-    </script>
 </head>
 <body>
-    <div class="container">
-        <!-- Contador de visitas -->
-        <div class="visit-counter">
-            <span>👁️</span>
-            <span id="visit-count">0</span>
-        </div>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#inicio">INICIO</a></li>
+                <li><a href="#sobre-mi">SOBRE MI</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#curriculum">CURRICULUM</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="inicio" class="container">
+            <div class="photo" onclick="launchFireworks(event)">
+                <div class="floating-message">Click en la foto</div>
+                <img src="rf_jmz.jpeg" alt="Foto de Rafael Jiménez Martínez" width="200" height="200">
+            </div>
+            <h1>RAFAEL JIMENEZ MARTINEZ</h1>
+            <div class="separator"></div>
+            <p>
+                Soy estudiante de TSU en la carrera de <b>Tecnologías de la Información: Área Desarrollo de Software Multiplataforma</b> 
+                en la Universidad Tecnológica del Valle de Toluca. Actualmente estoy en el <b>5to Cuatrimestre</b>.
+                <br><br>
+                Tengo <b>20 años</b>. Me gusta el <b>atletismo</b>, la <b>música</b>, programar, jugar videojuegos. 
+                Soy una persona <b>simpática</b>, me gusta la <b>comunicación</b>, escuchar y disfrutar de la vida.
+            </p>
+        </section>
 
-        <div class="photo" onclick="launchFireworks(event)">
-            <div class="floating-message">Click en la foto</div>
-            <img src="rf_jmz.jpeg" alt="Foto" width="200" height="200">
-        </div>
-        <h1>RAFAEL JIMENEZ MARTINEZ</h1>
-        <div class="separator"></div>
-        <p>
-            Soy estudiante de TSU en la carrera de <b>Tecnologías de la Información: Área Desarrollo de Software Multiplataforma</b> 
-            en la Universidad Tecnológica del Valle de Toluca. Actualmente estoy en el <b>5to Cuatrimestre</b>.
-            <br><br>
-            Tengo <b>20 años</b>. Me gusta el <b>atletismo</b>, la <b>música</b>, programar, jugar videojuegos. 
-            Soy una persona <b>simpática</b>, me gusta la <b>comunicación</b>, escuchar y disfrutar de la vida.
-        </p>
+        <section id="sobre-mi" class="container">
+            <h2>Sobre Mí</h2>
+            <div class="separator"></div>
+            <p>
+                Hola, mi nombre es Rafael Jiménez Martínez. Estudiante de Tecnologías de la Información, especializado en el desarrollo de software multiplataforma. Apasionado por la tecnología, la música y el atletismo. Siempre en busca de nuevos retos y oportunidades para crecer profesionalmente.
+            </p>
+            <h3>Datos Personales</h3>
+            <table>
+                <tr>
+                    <td><b>Cumpleaños</b></td>
+                    <td>28-11-2003</td>
+                </tr>
+                <tr>
+                    <td><b>Teléfono</b></td>
+                    <td>+52 722 123 4567</td>
+                </tr>
+                <tr>
+                    <td><b>Email</b></td>
+                    <td>rafa.jmz@example.com</td>
+                </tr>
+                <tr>
+                    <td><b>Distrito</b></td>
+                    <td>Toluca, México</td>
+                </tr>
+            </table>
+            <h3>Intereses</h3>
+            <ul class="interests">
+                <li>Programación</li>
+                <li>Música</li>
+                <li>Atletismo</li>
+                <li>Videojuegos</li>
+            </ul>
+        </section>
 
-        <!-- Redes Sociales -->
+        <section id="skills" class="container">
+            <h2>Skills</h2>
+            <div class="separator"></div>
+            <h3>Habilidades Técnicas</h3>
+            <ul class="skills-list">
+                <li>HTML & CSS <span class="skill-bar" style="width: 70%;"></span></li>
+                <li>JavaScript <span class="skill-bar" style="width: 60%;"></span></li>
+                <li>Python <span class="skill-bar" style="width: 50%;"></span></li>
+                <li>SQL <span class="skill-bar" style="width: 65%;"></span></li>
+            </ul>
+            <h3>Habilidades Profesionales</h3>
+            <ul class="skills-list">
+                <li>Comunicación <span class="skill-bar" style="width: 80%;"></span></li>
+                <li>Trabajo en Equipo <span class="skill-bar" style="width: 85%;"></span></li>
+                <li>Creatividad <span class="skill-bar" style="width: 90%;"></span></li>
+                <li>Resolución de Problemas <span class="skill-bar" style="width: 75%;"></span></li>
+            </ul>
+        </section>
+
+        <section id="curriculum" class="container">
+            <h2>Curriculum</h2>
+            <div class="separator"></div>
+            <h3>Educación</h3>
+            <div class="education">
+                <h4>Tecnologías de la Información: Área Desarrollo de Software Multiplataforma</h4>
+                <p><b>Universidad Tecnológica del Valle de Toluca</b></p>
+                <p>2021 - Presente</p>
+                <p>Actualmente cursando el 5to cuatrimestre de la carrera, con enfoque en desarrollo de software, bases de datos y gestión de proyectos tecnológicos.</p>
+            </div>
+            <h3>Experiencia Laboral</h3>
+            <div class="experience">
+                <h4>Desarrollador Junior</h4>
+                <p><b>Empresa XYZ</b></p>
+                <p>Enero 2023 - Presente</p>
+                <ul>
+                    <li>Desarrollo y mantenimiento de aplicaciones web.</li>
+                    <li>Colaboración en proyectos de software multiplataforma.</li>
+                    <li>Optimización de bases de datos y consultas SQL.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
         <div class="social-links">
-            <a href="https://www.facebook.com/share/1XS3gJdc6w/" target="_blank">
+            <a href="https://www.facebook.com/share/1XS3gJdc6w/" target="_blank" aria-label="Facebook">
                 <img src="facebook.png" alt="Facebook">
             </a>
-            <a href="https://www.instagram.com/jmz.rafa.20?igsh=eDdvcGh0M2YwN3hm" target="_blank">
+            <a href="https://www.instagram.com/jmz.rafa.20?igsh=eDdvcGh0M2YwN3hm" target="_blank" aria-label="Instagram">
                 <img src="instagram.png" alt="Instagram">
             </a>
-            <a href="https://www.threads.net/@jmz.rafa.20" target="_blank">
+            <a href="https://www.threads.net/@jmz.rafa.20" target="_blank" aria-label="Threads">
                 <img src="threads.png" alt="Threads">
             </a>
-            <a href="https://github.com/Rafa-hud" target="_blank">
+            <a href="https://github.com/Rafa-hud" target="_blank" aria-label="GitHub">
                 <img src="github.png" alt="GitHub">
             </a>
         </div>
-    </div>
+    </footer>
 </body>
 </html>
