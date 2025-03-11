@@ -66,17 +66,16 @@
   <main class="main">
     <!-- Hero Section -->
     <section id="home" class="hero section dark-background">
-      <img src="assets/img/git.jpg" alt="" class="img-fluid">
+      <img src="assets/img/git.jpg" alt="" data-aos="fade-in">
       <div class="container d-flex flex-column align-items-center">
         <div class="hero-content_12">
           <div class="photo_12" onclick="launchFireworks(event)">
-            <div class="floating-message">Click en la foto</div>
-            <img src="assets/img/rf_jmz.jpeg" alt="Foto de Rafael Jiménez Martínez" class="img-fluid rounded-circle" width="200" height="200">
+            <img src="assets/img/rf_jmz.jpeg" alt="Foto de Rafael Jiménez Martínez" class="img-fluid" width="200" height="200">
           </div>
-          <h1 class="text-center">RAFAEL JIMÉNEZ MARTÍNEZ</h1>
+          <h1>RAFAEL JIMÉNEZ MARTÍNEZ</h1>
           <div class="separator_12"></div>
-          <p class="subtitle_12 text-center">Técnico en Programación</p>
-          <div class="social-icons d-flex justify-content-center">
+          <p class="subtitle_12">Técnico en Programación</p>
+          <div class="social-icons">
             <a href="https://facebook.com/tu-perfil" target="_blank" class="social-icon">
               <i class="fab fa-facebook-f"></i>
             </a>
@@ -97,13 +96,13 @@
     <section id="sobre_mi" class="about section">
       <div class="container">
         <div class="row gy-4 justify-content-center">
-          <div class="col-lg-8">
-            <h2 class="text-center">Sobre Mí</h2>
+          <div class="col-lg-6">
+            <h2>Sobre Mí</h2>
             <div class="separator"></div>
-            <p class="text-center">
+            <p style="color: black; text-align: justify;">
               Hola, mi nombre es Rafael Jiménez Martínez. Estudiante de Tecnologías de la Información, especializado en el desarrollo de software multiplataforma. Apasionado por la tecnología, la música y el atletismo. Siempre en busca de nuevos retos y oportunidades para crecer profesionalmente.
             </p>
-            <h3 class="text-center">Datos Personales</h3>
+            <h3 style="text-align: center;">Datos Personales</h3>
             <table class="table">
               <tr>
                 <td><b>Cumpleaños</b></td>
@@ -122,8 +121,8 @@
                 <td>Toluca, México</td>
               </tr>
             </table>
-            <h3 class="text-center">Intereses</h3>
-            <ul class="interests text-center list-unstyled">
+            <h3 style="text-align: center;">Intereses</h3>
+            <ul class="interests" style="list-style-type: none; padding: 0; text-align: center;">
               <li>• Programación</li>
               <li>• Música</li>
               <li>• Atletismo</li>
@@ -137,10 +136,10 @@
     <!-- Skills Section -->
     <section id="skills" class="services section">
       <div class="container">
-        <h2 class="text-center">Skills</h2>
+        <h2>Skills</h2>
         <div class="separator"></div>
-        <h3 class="text-center">Habilidades Técnicas</h3>
-        <ul class="skills-list list-unstyled">
+        <h3>Habilidades Técnicas</h3>
+        <ul class="skills-list">
           <li>
             <span class="skill-name">HTML & CSS</span>
             <span class="skill-percent">70%</span>
@@ -162,8 +161,8 @@
             <div class="skill-bar" style="width: 65%;"></div>
           </li>
         </ul>
-        <h3 class="text-center">Habilidades Profesionales</h3>
-        <ul class="skills-list list-unstyled">
+        <h3>Habilidades Profesionales</h3>
+        <ul class="skills-list">
           <li>
             <span class="skill-name">Comunicación</span>
             <span class="skill-percent">80%</span>
@@ -191,21 +190,21 @@
     <!-- Curriculum Section -->
     <section id="curriculum" class="portfolio section">
       <div class="container">
-        <h2 class="text-center">Curriculum</h2>
+        <h2>Curriculum</h2>
         <div class="separator"></div>
-        <h3 class="text-center">Educación</h3>
+        <h3>Educación</h3>
         <div class="education">
-          <h4 class="text-center">Tecnologías de la Información: Área Desarrollo de Software Multiplataforma</h4>
-          <p class="text-center"><b>Universidad Tecnológica del Valle de Toluca</b></p>
-          <p class="text-center">2021 - Presente</p>
-          <p class="text-center">Actualmente cursando el 5to cuatrimestre de la carrera, con enfoque en desarrollo de software, bases de datos y gestión de proyectos tecnológicos.</p>
+          <h4>Tecnologías de la Información: Área Desarrollo de Software Multiplataforma</h4>
+          <p><b>Universidad Tecnológica del Valle de Toluca</b></p>
+          <p>2021 - Presente</p>
+          <p>Actualmente cursando el 5to cuatrimestre de la carrera, con enfoque en desarrollo de software, bases de datos y gestión de proyectos tecnológicos.</p>
         </div>
-        <h3 class="text-center">Experiencia Laboral</h3>
+        <h3>Experiencia Laboral</h3>
         <div class="experience">
-          <h4 class="text-center">Desarrollador Junior</h4>
-          <p class="text-center"><b>Empresa XYZ</b></p>
-          <p class="text-center">Enero 2023 - Presente</p>
-          <ul class="text-center list-unstyled">
+          <h4>Desarrollador Junior</h4>
+          <p><b>Empresa XYZ</b></p>
+          <p>Enero 2023 - Presente</p>
+          <ul>
             <li>Desarrollo y mantenimiento de aplicaciones web.</li>
             <li>Colaboración en proyectos de software multiplataforma.</li>
             <li>Optimización de bases de datos y consultas SQL.</li>
@@ -263,5 +262,14 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const navmenu = document.querySelector('#navmenu');
 
+    mobileNavToggle.addEventListener('click', function() {
+      navmenu.classList.toggle('active');
+    });
+  });
+</script>
 </html>
