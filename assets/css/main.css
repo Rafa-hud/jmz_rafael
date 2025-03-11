@@ -22,7 +22,7 @@
 .social-icon {
   font-size: 24px;
   color: #fff; /* Color de los íconos */
-  background-color: #007bff; /* Fondo de los íconos */
+  background-color: #b32020; /* Fondo de los íconos */
   width: 40px;
   height: 40px;
   display: flex;
@@ -34,7 +34,7 @@
 }
 
 .social-icon:hover {
-  background-color: #0056b3; /* Color al hacer hover */
+  background-color: #b32020; /* Color al hacer hover */
   transform: scale(1.1); /* Efecto de escala al hacer hover */
 }
 
@@ -102,7 +102,7 @@
 
 .photo_12 img {
     border-radius: 50%;
-    border: 5px solid var(--accent-color);
+    border: 5px solid #b32020;
     transition: transform 0.3s ease;
 }
 
@@ -115,7 +115,7 @@
     bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--accent-color);
+    background: #b32020;
     color: var(--contrast-color);
     padding: 5px 10px;
     border-radius: 5px;
@@ -130,8 +130,8 @@
 
 .separator_12 {
     width: 50px;
-    height: 2px;
-    background: var(--accent-color);
+    height: 4px;
+    background: #b32020;
     margin: 20px auto;
 }
 
@@ -159,7 +159,7 @@
 .about .separator {
   width: 60px;
   height: 3px;
-  background-color: var(--accent-color);
+  background-color: #b32020;
   margin: 0 auto 20px auto;
 }
 
@@ -192,7 +192,7 @@
 .about table td:first-child {
   font-weight: bold;
   width: 40%;
-  color: var(--accent-color);
+  color: #b32020;
 }
 
 .about .interests {
@@ -205,7 +205,7 @@
 }
 
 .about .interests li {
-  background: var(--accent-color);
+  background: #b32020;
   color: var(--contrast-color);
   padding: 8px 15px;
   border-radius: 20px;
@@ -254,7 +254,7 @@
 #skills .separator {
   width: 60px;
   height: 3px;
-  background-color: #007bff;
+  background-color: #c10202;
   margin: 0 auto 20px auto;
 }
 
@@ -284,7 +284,7 @@
 
 .skill-percent {
   font-size: 14px;
-  color: #007bff;
+  color: #d00404;
   position: absolute;
   right: 0;
   top: 0;
@@ -293,7 +293,7 @@
 .skill-bar {
   display: block;
   height: 10px;
-  background: #007bff;
+  background: #770909;
   border-radius: 5px;
   margin-top: 5px;
   position: relative;
@@ -307,7 +307,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 123, 255, 0.2);
+  background: rgb(141, 0, 0);
   border-radius: 5px;
 }
 
@@ -335,7 +335,7 @@
 #curriculum .separator {
   width: 60px;
   height: 3px;
-  background-color: #007bff;
+  background-color: #b32020;
   margin: 0 auto 20px auto;
 }
 
@@ -351,13 +351,13 @@
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 10px;
-  border-left: 4px solid #007bff;
+  border-left: 4px solid #b32020;
 }
 
 .education h4, .experience h4 {
   font-size: 24px;
   margin-bottom: 10px;
-  color: #007bff;
+  color: #000000;
 }
 
 .education p, .experience p {
