@@ -8,154 +8,7 @@
 /* Estilos para la sección de Redes Sociales y Certificados */
 /* Estilos para la sección de Redes Sociales y Certificados */
 /* Estilos para la sección de Redes Sociales y Certificados */
-/* Estilos generales para móviles */
-@media (max-width: 768px) {
-  /* Ajustes para el header */
-  .header {
-    padding: 10px 0;
-  }
 
-  .logo .sitename {
-    font-size: 1.2rem; /* Tamaño de fuente más pequeño para móviles */
-  }
-
-  .mobile-nav-toggle {
-    display: block; /* Mostrar el ícono de hamburguesa */
-  }
-
-  .navmenu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%; /* Ancho del menú desplegable */
-    height: 100vh;
-    background-color: #fff;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    transition: right 0.3s ease;
-    z-index: 1000;
-  }
-
-  .navmenu.active {
-    right: 0; /* Mostrar el menú */
-  }
-
-  .navmenu ul {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-
-  .navmenu ul li {
-    margin: 15px 0;
-  }
-
-  .navmenu ul li a {
-    font-size: 1.2rem; /* Tamaño de fuente más grande para enlaces */
-  }
-
-  /* Ajustes para la sección Hero */
-  .hero {
-    padding: 80px 0;
-  }
-
-  .hero-content_12 {
-    padding: 0 20px;
-  }
-
-  .photo_12 img {
-    width: 150px; /* Tamaño de imagen más pequeño para móviles */
-    height: 150px;
-  }
-
-  h1 {
-    font-size: 1.8rem; /* Tamaño de fuente más pequeño para títulos */
-  }
-
-  .subtitle_12 {
-    font-size: 1rem; /* Tamaño de fuente más pequeño para subtítulos */
-  }
-
-  .social-icons a {
-    font-size: 1.2rem; /* Tamaño de íconos sociales más pequeño */
-  }
-
-  /* Ajustes para la sección About */
-  .about {
-    padding: 40px 0;
-  }
-
-  .about h2 {
-    font-size: 1.8rem; /* Tamaño de fuente más pequeño para títulos */
-  }
-
-  .about p {
-    font-size: 0.9rem; /* Tamaño de fuente más pequeño para párrafos */
-  }
-
-  .about .table {
-    font-size: 0.9rem; /* Tamaño de fuente más pequeño para tablas */
-  }
-
-  .about .interests li {
-    font-size: 0.9rem; /* Tamaño de fuente más pequeño para intereses */
-  }
-
-  /* Ajustes para la sección Skills */
-  .services {
-    padding: 40px 0;
-  }
-
-  .services h2 {
-    font-size: 1.8rem; /* Tamaño de fuente más pequeño para títulos */
-  }
-
-  .skills-list li {
-    font-size: 0.9rem; /* Tamaño de fuente más pequeño para habilidades */
-  }
-
-  .skill-bar {
-    height: 8px; /* Altura más pequeña para las barras de habilidades */
-  }
-
-  /* Ajustes para la sección Curriculum */
-  .portfolio {
-    padding: 40px 0;
-  }
-
-  .portfolio h2 {
-    font-size: 1.8rem; /* Tamaño de fuente más pequeño para títulos */
-  }
-
-  .education h4, .experience h4 {
-    font-size: 1.2rem; /* Tamaño de fuente más pequeño para subtítulos */
-  }
-
-  .education p, .experience p {
-    font-size: 0.9rem; /* Tamaño de fuente más pequeño para párrafos */
-  }
-
-  .education ul, .experience ul {
-    font-size: 0.9rem; /* Tamaño de fuente más pequeño para listas */
-  }
-
-  /* Ajustes para el footer */
-  .footer {
-    padding: 20px 0;
-  }
-
-  .footer .sitename {
-    font-size: 1.2rem; /* Tamaño de fuente más pequeño para el nombre del sitio */
-  }
-
-  .footer-contact p {
-    font-size: 0.9rem; /* Tamaño de fuente más pequeño para el texto de contacto */
-  }
-
-  .footer .social-icons a {
-    font-size: 1.2rem; /* Tamaño de íconos sociales más pequeño */
-  }
-}
 
 /* Estilos para los íconos sociales */
 .social-icons {
@@ -368,11 +221,12 @@
 
 #sobre_mi {
   padding: 40px 20px;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 50px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
+  box-shadow: 0 0 15px rgb(255, 0, 0);
   margin: 0 auto;
+  width: auto;
+  height: auto;
 }
 
 
